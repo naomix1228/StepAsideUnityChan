@@ -14,7 +14,9 @@ public class UnityChanController : MonoBehaviour
     //前進するための力
     private float forwardForce = 800.0f;
     private float turnForce = 500.0f;
+    //左右の移動できる範囲
     private float movableRange = 3.4f;
+    //ジャンプするための力
     private float upForce = 500.0f;
 
     //動きを減速させる係数
@@ -90,6 +92,7 @@ public class UnityChanController : MonoBehaviour
             this.myRigidbody.AddForce(this.turnForce, 0, 0);
         }
 
+        //Jumpステートの場合はJumpにfalseをセットする
         if (this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
         {
             this.myAnimator.SetBool("Jump", false);
@@ -108,7 +111,7 @@ public class UnityChanController : MonoBehaviour
     }
 
     //トリガーモードで他のオブジェクトと接触した場合の処理
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         //障害物に衝突した場合
         if (other.gameObject.tag == "CarTag" || other.gameObject.tag == "TrafficConeTag")

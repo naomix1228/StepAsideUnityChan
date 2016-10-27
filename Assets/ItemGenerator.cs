@@ -12,21 +12,30 @@ public class ItemGenerator : MonoBehaviour {
 
     private int startPos = -160;
     private int goalPos = 120;
-
+    //アイテムを出すx方向の範囲
     private float posRange = 3.4f;
+
+    private float difference;
 
 
     // Use this for initialization
     void Start()
     {
 
-        
-
         //一定の距離ごとにアイテムを生成
         for (int i = startPos; i < goalPos; i += 15)
         {
+
+            //課題ユニティちゃんの位置
+            this.unitychan = GameObject.Find("unitychan");
+            //課題アイテムの生成範囲
+            this.difference = goalPos - unitychan.transform.position.z;
+
             //どのアイテムを出すのかをランダムに設定
             int num = Random.Range(0, 10);
+
+            
+
             if (num <= 1)
             {
                 //コーンをx軸方向に一直線に生成
@@ -39,10 +48,14 @@ public class ItemGenerator : MonoBehaviour {
 
             else
             {
+                //レーンごとにアイテムを生成
                 for (int j = -1; j < 2; j++)
                 {
+                    //アイテムの種類を決める
                     int item = Random.Range(1, 11);
+                    //アイテムを置くZ座標のオフセットをランダムに設定
                     int offsetZ = Random.Range(-5, 6);
+                    //50%コイン配置:30%車配置:10%何もなし
                     if (1 <= item && item <= 6)
                     {
                         GameObject coin = Instantiate(coinPrefab) as GameObject;

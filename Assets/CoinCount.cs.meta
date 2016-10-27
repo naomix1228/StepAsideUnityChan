@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5e5c4ee733ebddd4994b123c641d2494
+timeCreated: 1477571449
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - coinprefab: {fileID: 1000012426118596, guid: bb0eda7bf93aa6f40bfa41080627f810,
+      type: 2}
+  - coneprefab: {fileID: 1000012378466740, guid: e19be03bd1199f3489003dc269d37120,
+      type: 2}
+  - carprefab: {fileID: 1000010637292640, guid: 521a9d357f49a304bb60d0c17b94713a,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
